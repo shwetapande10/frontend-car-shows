@@ -3,11 +3,13 @@ import {NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import * as _ from 'underscore';
 import {CarsShowHierarchyService}  from './cars-show-hierarchy.service';
+import { CARSDATA } from './cars-show-hierarchy.model';
 
 @Component({
   selector: 'app-cars-show-hierarchy',
   templateUrl: './cars-show-hierarchy.component.html',
-  styleUrls: ['./cars-show-hierarchy.component.scss']
+  styleUrls: ['./cars-show-hierarchy.component.scss'],
+  providers: [CarsShowHierarchyService]
 })
 export class CarsShowHierarchyComponent implements OnInit {
 

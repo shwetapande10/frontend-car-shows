@@ -1,4 +1,4 @@
-interface CARSDATA {
+export interface CARSDATA {
     name: string;
     children?: CARSDATA[];
   }

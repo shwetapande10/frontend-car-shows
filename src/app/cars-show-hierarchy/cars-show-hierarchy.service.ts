@@ -3,6 +3,7 @@ import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { isArray } from 'util';
 import { environment } from '../../environments/environment';
+import { CARSDATA } from './cars-show-hierarchy.model';
 
 const httpOptions: any = {
   headers: new HttpHeaders({
@@ -33,14 +34,14 @@ export class CarsShowHierarchyService {
     );
   }
 
-  validateData(data: any): boolean {
+  private validateData(data: any): boolean {
     if (data && data.makes && isArray(data.makes)) {
       return true;
     }
     return false;
   }
 
-  transformData(data: any): CARSDATA[] {
+  private transformData(data: any): CARSDATA[] {
     let transformedData: CARSDATA[] = [];
     let tempjson = data.makes;
     if(tempjson.length){
@@ -50,7 +51,7 @@ export class CarsShowHierarchyService {
     return transformedData;
   }
 
-  renameChildKeys(data : any) {
+  private renameChildKeys(data : any) {
     return data.map(child => {
       let childkey = this.getChildKey(child); 
       if(childkey){
@@ -61,7 +62,7 @@ export class CarsShowHierarchyService {
     })
   }
 
-  getChildKey(object:any){
+  private getChildKey(object:any){
     let _obj = Object.assign({},object);
     delete _obj.name;
     let keys = Object.keys(_obj);
