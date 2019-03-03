@@ -6,9 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'car-shows';
+  title = 'Car Shows List';
 
   constructor(){
-    console.log("Init")
   }
 }

@@ -6,7 +6,8 @@ import {MatIconModule} from '@angular/material/icon'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarsShowHierarchyComponent } from './cars-show-hierarchy/cars-show-hierarchy.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,10 @@ import { CarsShowHierarchyComponent } from './cars-show-hierarchy/cars-show-hier
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatTreeModule
+    MatTreeModule,
+    HttpClientModule,
+    MatButtonModule, 
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
